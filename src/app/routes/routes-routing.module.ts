@@ -15,7 +15,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'employee/list', pathMatch: 'full' },
       {
         path: 'employee',
         loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule),
@@ -28,7 +28,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '**', redirectTo: 'employee' },
+  { path: '**', redirectTo: 'employee/list' },
 ];
 
 @NgModule({
