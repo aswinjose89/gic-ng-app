@@ -1,0 +1,22 @@
+{
+  "menu": [
+    {
+      "route": "employee",
+      "name": "employee",
+      "type": "sub",
+      "icon": "lightbulb",
+      "label": {
+        "color": "indigo-500",
+        "value": "new"
+      },
+      "children": [
+        {
+          "route": "list",
+          "name": "list",
+          "type": "link"
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,69 @@
+<form [formGroup]="empFormGrp" class="form-field-full">
+  <div fxLayout="row wrap" fxLayoutGap="8px grid">
+
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="firstName" minlength="6" maxlength="10" required>
+        <mat-error *ngIf="empFormGrp.get('firstName').errors?.required">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="empFormGrp.get('firstName').errors?.minlength">
+          Enter minimun 6 character
+        </mat-error>
+        <mat-error *ngIf="empFormGrp.get('firstName').errors?.maxlength">
+          Enter maximum 10 character
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lastName" required>
+        <mat-error *ngIf="empFormGrp.get('lastName').errors?.required">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="empFormGrp.get('lastName').errors?.minlength">
+          Enter minimun 6 character
+        </mat-error>
+        <mat-error *ngIf="empFormGrp.get('lastName').errors?.maxlength">
+          Enter maximum 10 character
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Simple placeholder" formControlName="email" required>
+        <mat-error *ngIf="empFormGrp.get('email').invalid">
+          {{getErrorMessage(empFormGrp)}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="Phone Number" type="number" formControlName="number"
+                required>
+        <mat-icon matSuffix>smartphone</mat-icon>
+        <mat-error *ngIf="empFormGrp.get('number').invalid">Field is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <mat-label>Gender</mat-label>
+        <mat-radio-group class="ms-2" aria-label="Select gender" formControlName="gender">
+          <mat-radio-button value="male" checked="true">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-error *ngIf="empFormGrp.get('gender').errors?.required">
+          Field is required
+        </mat-error>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-raised-button color="primary" (click)="submit(empFormGrp)">Submit</button>
+    <button mat-raised-button color="secondary" (click)="reset(empFormGrp)" class="ms-2">Reset</button>
+    <button mat-raised-button color="secondary" (click)="goBack()" class="ms-2">Back</button>
+  </div>
+</form>
