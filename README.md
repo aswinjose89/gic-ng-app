@@ -1,7 +1,7 @@
 
 ### Express Model View Controller Pattern (MVC)
 
-The following is an illustration of how we can apply CRUD operation in angular framework with the help of typescript
+The following is an illustration of how we can apply CRUD operation in angular framework with the help of typescript and localstorage
 
 #### Prerequisites:
 
