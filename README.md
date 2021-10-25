@@ -7,6 +7,11 @@ The following is an illustration of how we can apply CRUD operation in angular f
 
 - node v12.0.0
 - angular v11.1.0
+- ag-grid-community v26.1.0
+- @angular/material v11.1.0
+- bootstrap v5.0.2
+- ngrx v12.5.0
+- angular/router v11.1.0
 - Refer the module source code directory path at src/app/routes/employee
 
 #### How to Run:
