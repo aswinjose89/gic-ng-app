@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddEmpComponent, ListEmpComponent,EditEmpComponent } from './'
+import { AddEmpComponent, ListEmpComponent,EditEmpComponent } from './';
+
 
 const routes: Routes = [
   { path: 'list', component: ListEmpComponent, data: { title: 'Employees List' } },

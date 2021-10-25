@@ -42,6 +42,7 @@
     "@ng-matero/extensions": "^11.0.0",
     "@ng-select/ng-option-highlight": "0.0.6",
     "@ng-select/ng-select": "^5.1.0",
+    "@ngrx/effects": "^12.5.0",
     "@ngrx/store": "^12.5.0",
     "@ngx-formly/core": "^5.10.11",
     "@ngx-formly/material": "^5.10.11",
@@ -63,6 +64,7 @@
     "photoviewer": "^3.5.4",
     "rxjs": "~6.6.0",
     "screenfull": "^5.1.0",
+    "subsink": "^1.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
@@ -74,6 +76,7 @@
     "@angularclass/hmr": "^3.0.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@ngrx/schematics": "^12.5.0",
     "@types/d3": "^7.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",

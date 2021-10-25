@@ -1,11 +1,14 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Store, select } from '@ngrx/store';
 
 import { ApiService } from '../../../../core/services';
 import { AgCellBtnComponent } from '../ag-cell-btn/ag-cell-btn.component';
 import { DeleteEmployeeComponent } from '../../popups';
 import { employeeConfig } from '../../configs';
+import * as empStore from '../../store';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-list-emp',
@@ -18,8 +21,9 @@ export class ListEmpComponent implements OnInit {
   public frameworkComponents: any;
   public columnDefs: any[];
   public defaultColDef: any;
+  private subs = new SubSink();
 
-  constructor(private api:  ApiService, public router: Router, public dialog: MatDialog) {
+  constructor(private store: Store<any>, private api:  ApiService, public router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -62,13 +66,13 @@ export class ListEmpComponent implements OnInit {
 
   getEmployees(){
     this.input = {};
-      this.api.getRemoteApi("https://6164f6e709a29d0017c88ed9.mockapi.io/fetest/employees", this.input).subscribe((data)=>{
-        this.rowData= data;
-        localStorage.setItem("rowData", JSON.stringify(data));
-      },
-      (error)=>{
-            this.api.errorResponse(error);
-      });
+    this.subs.add(this.api.getRemoteApi("https://6164f6e709a29d0017c88ed9.mockapi.io/fetest/employees", this.input).subscribe((data)=>{
+      this.rowData= data;
+      localStorage.setItem("rowData", JSON.stringify(data));
+    },
+    (error)=>{
+          this.api.errorResponse(error);
+    }));
   }
 
   actionBtn(e) {
@@ -103,5 +107,9 @@ export class ListEmpComponent implements OnInit {
       }
       console.log('The dialog was closed');
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 }
