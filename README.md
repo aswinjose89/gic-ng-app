@@ -1,5 +1,5 @@
 
-### Express Model View Controller Pattern (MVC)
+### Angular CRUD Operation Using LocalStorage
 
 The following is an illustration of how we can apply CRUD operation in angular framework with the help of typescript and localstorage
 
