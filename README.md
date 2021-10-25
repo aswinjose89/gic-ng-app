@@ -1,19 +1,20 @@
 
 ### Express Model View Controller Pattern (MVC)
 
-The following is an illustration of how we can apply an **MVC** concept to our **NodeJS** application using the **Express Framework** by using GIC Task API's
+The following is an illustration of how we can apply CRUD operation in angular framework with the help of typescript
 
 #### Prerequisites:
 
 - node v12.0.0
 - angular v11.1.0
-- Refer the module directory path at src/app/routes/employee
+- Refer the module source code directory path at src/app/routes/employee
 
 #### How to Run:
 
 - install all modules first by typing `npm install` or `yarn add`
 
 - to run it please type `npm run start`
+- Access Url http://localhost:4200/employee/list 0r http://localhost:4200
 
 #### Build Docker image:
 
